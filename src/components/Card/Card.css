@@ -1,0 +1,57 @@
+.Card{
+    background-color: lawngreen;
+    border: 1px solid black;
+    padding: 5px 5px;
+    font-size: 1.4rem;
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 300px;
+    margin: 30px;
+    position:relative
+}
+
+.buttonDiv{
+    position:absolute;                  
+    bottom:0;                          
+    left:0; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+.markAsDone{
+    text-decoration: line-through;
+    color: grey;
+}
+
+.button {
+    border-radius: 90px;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border-color: black;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.button:focus {
+    border: none  !important;;
+    outline:none  !important;;
+}

@@ -1,0 +1,47 @@
+.navegacao {
+    background-color: black;
+    height: 86px;
+    display: flex;
+    padding-left: 100px;
+}
+
+.nav-itens {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    padding-right: 100px;
+}
+.nav-itens a{
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    overflow: hidden;
+    color: khaki;
+}
+@media screen and (max-width: 800px) {
+    .nav-itens{
+        display: none;
+    }    
+}
+.nav-itens a:active{
+    background-color: coral;
+}
+
+.nav-itens a:focus{
+    color: khaki;
+}
+
+.logo-image a {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+}

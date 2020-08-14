@@ -1,0 +1,40 @@
+.TodoForm{
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.searchAndAddDiv{
+    display: flex;
+}
+
+.labelField{
+    display: flex;
+}
+.searchAndAdd{
+    margin-left: 5px;
+}
+
+.inputColor{
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.FormDiv{
+    margin: 5px;
+}
+
+.FormInput{
+    font-size: 1.2rem;
+    resize: none;
+    transition: .1s ease-in-out;
+    overflow: hidden;
+}
+
+.FormInput:focus::placeholder {
+    transform: scale(.4) translateY(-10px) ;
+    transform-origin: 0% 0%;
+    display: flex;
+}
