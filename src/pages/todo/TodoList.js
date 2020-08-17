@@ -2,8 +2,11 @@ import React from 'react'
 import './Todos.css'
 import CardPanel from '../../components/CardPanel/CardPanel';
 import Card from '../../components/Card/Card';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { markAsDone, markAsPending, remove } from './TodoActions'
 
-export default props => {
+const TodoList = props => {
 
     function renderCard(){
         const list = props.list || [];
@@ -11,9 +14,9 @@ export default props => {
             <div key={item.id}>
                 <Card
                     item={item}
-                    handleMarkAsDone={props.handleMarkAsDone}
-                    handleMarkAsPending={props.handleMarkAsPending}
-                    handleRemove={props.handleRemove}
+                    handleMarkAsDone={props.markAsDone}
+                    handleMarkAsPending={props.markAsPending}
+                    handleRemove={props.remove}
                 />
             </div>
         ))
@@ -26,3 +29,14 @@ export default props => {
         </>
     )
 }
+
+const mapStateToProps = state => ({
+    list: state.todo.list,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+    { markAsDone, markAsPending, remove },
+    dispatch
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

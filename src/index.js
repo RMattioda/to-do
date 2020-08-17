@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from 'react-router-dom';
-import Todo from './pages/todo/Todo'
-import Sobre from './pages/about/Sobre'
+import Routes from './routers/routes'
+import { applyMiddleware, createStore } from 'redux'
+
+//middlewares
+import promise from 'redux-promise'
+import multi from 'redux-multi'
+import thunk from 'redux-thunk'
+
+import { Provider } from 'react-redux'
+import reducers from './reducers/reducer'
+
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers, devTools);
 
 ReactDOM.render(
-  <Router>
-    <Switch>
-        <Route exact path="/" component={Todo}/>
-        <Route path="/todos" component={Todo} />
-        <Route path="/sobre" component={Sobre} />
-        <Route path="*" render={() => (<Redirect to="/todos" />)} />
-    </Switch>
-  </Router>,
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
   document.getElementById('root')
 );

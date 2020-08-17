@@ -31,7 +31,7 @@ export default ({item, handleMarkAsDone, handleMarkAsPending, handleRemove})=> {
                 )}
 
                 <button className='button red'
-                    onClick={()=> handleRemove(item)}>
+                    onClick={()=> handleRemove(item.id)}>
                     <i style={{
                         color: 'white',
                     }} className='far fa-trash-alt'></i>
